@@ -1,5 +1,7 @@
 # Double's Trouble
 
+<img src="./images/pexels-masood-aslami-4052295.jpg" width ="300px">
+
 ### A Browser Game by David Caldwell
 
 ---
@@ -28,3 +30,5 @@
 - First to move all 3 dots to their opponents end of the board wins!!
 
 #### Credits
+
+Game idea - [Trouble](https://hasbrogaming.hasbro.com/en-us/product/trouble-game:861A1979-5056-9047-F547-FF2711C8C223)
