@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+
+/* <-- Landing Page Styles --> */
+
 #landingBody {
   display: flex;
   justify-content: space-between;
@@ -42,13 +45,53 @@
   background-color: rgba(0, 0, 0, 0.4);
   border: 1vmin solid rgba(0, 0, 0, 0.8);
   border-radius: 3vmin;
+  font-family: 'Acme', sans-serif;
 }
 .landingGameRules {
   text-decoration: underline;
   text-align: center;
-  font-size:3vh;
+  font-size: 5vh;
 }
 .rules {
-  font-size: 2vh;
+  font-size: 3vh;
+  margin: 5px;
+  padding: 5px;
+}
 
+/* <-- Game Page Styles --> */
+
+.gameBoard {
+  display: grid;
+  grid-template-columns: 1fr 16fr 1fr;
+  border: 2px solid blue;
+  align-items: center;
+}
+.boardBlocks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 20vh;
+  border: 2px solid red;
+}
+.playArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+.redSide, .blueSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:50vh;
+  width:50vh;
+  border: 2px solid green;
+}
+.start, .safe {
+  
+  height: 50vh;
+  width: 50vh;
+  border: 2px solid yellow;
 }
