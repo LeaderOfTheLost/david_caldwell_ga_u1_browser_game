@@ -8,7 +8,27 @@
   <script defer src="./app.js"></script>
   <title>Double's Trouble</title>
 </head>
-<body>
-  <a href="./game.html">GAME</a>
+<body id="landingBody">
+  <section class="landingPage">
+    <div class="landingHead">
+      <h1 class="landingTitle">DOUBLES TROUBLE</h1>
+    </div>
+    <div class="button">
+      <a href="./game.html">
+        <button id="playBtn">Let's Play</button>
+      </a>
+    </div>
+    <div class="gameRules">
+      <h3 class="landingGameRules">Game Rules</h3>
+      <ul>
+        <li class="rules">Lets say Red player rolls the die first</li>
+        <li class="rules">Choose a dot to move, it will move the amount of spaces you rolled</li>
+        <li class="rules">Blue players rolls and moves their dot</li>
+        <li class="rules"> If a player lands on a space with the opponents dot, the opponents dot is moved back to the start and the player takes over that position</li>
+        <li class="rules">First to move all 3 dots to their opponents end of the board wins!!</li>
+    </ul>
+    </div>
+  </section>
+
 </body>
 </html>
