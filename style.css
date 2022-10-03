@@ -8,9 +8,9 @@
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
-  background-color: rgb(96, 0, 0);
   padding: 4vh;
   margin: 4vh;
+  background-image: url('./images/pexels-anni-roenkae-2832382.jpg') ;
 }
 .landingHead {
   text-align: center;
@@ -21,8 +21,34 @@
   text-align: center;
 }
 #playBtn {
+  font-family: 'Acme', sans-serif;
   width: 15vw;
   height: 15vh;
   font-size: 5vmin;
-  background-image: radial-gradient(rgb(103, 0, 0),rgb(34, 34, 128));
+  background-image: radial-gradient(rgba(255, 0, 0, 0.843),rgb(0, 0, 255));
+  color:azure;
+  border-radius: 3vmin;
+  border: 1vh solid rgba(255, 0, 0, 0.6);
+}
+.landingTitle {
+  font-family: 'Acme', sans-serif;
+  font-size: 15vh;
+  color: azure
+}
+.gameRules {
+  margin: 5vmin;
+  padding: 5vmin;
+  color:azure;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1vmin solid rgba(0, 0, 0, 0.8);
+  border-radius: 3vmin;
+}
+.landingGameRules {
+  text-decoration: underline;
+  text-align: center;
+  font-size:3vh;
+}
+.rules {
+  font-size: 2vh;
+
 }
