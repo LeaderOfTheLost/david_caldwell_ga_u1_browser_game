@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script defer src="./app.js"></script>
   <title>Double's Trouble</title>
 </head>
 <body id="gameBody">
+  <div>
+    <nav>
+      <button class="homeBtn"><a href="./index.html">HOME</a></button>
+    </nav>
+  <h1 class="gameHead">Doubles Trouble</h1>
   <div class="gameBoard">
+    
     <section class="redSide">
       <div class="start" id="redStart">
-        <section class="pegs">
           <div class="redPegs" id="redPeg1"></div>
           <div class="redPegs" id="redPeg2"></div>
           <div class="redPegs" id="redPeg3"></div>
-        </section>
       </div>
       <div class="safe" id="blueSafe"></div>
     </section>
@@ -40,18 +45,20 @@
     </section>
     <section class="blueSide">
       <div class="start" id="blueStart">
-        <section class="pegs">
           <div class="bluePegs" id="bluePeg1"></div>
           <div class="bluePegs" id="bluePeg2"></div>
           <div class="bluePegs" id="bluePeg3"></div>
-        </section>
       </div>
       <div class="safe" id="redSafe"></div>
     </section>
   </div>
-  <button class="gameBtns">1 player</button>
-  <button class="gameBtns">2 Player</button>
-
-  <button class="homeBtn"><a href="./index.html">HOME</a></button>
+  <section class="bottomPanel">
+    <div class="announcements"></div>
+    <button class="gameBtns">Roll!!</button>
+    <button class="gameBtns">Play!!</button>
+  </section>
+  </section>
+ 
+</div>
 </body>
 </html>

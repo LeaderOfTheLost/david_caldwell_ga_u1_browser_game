@@ -67,13 +67,20 @@
   justify-content: center;
   margin: 2vmin;
   border: 2px solid black;
+  background-color: rgb(36, 30, 73);
+}
+.gameHead {
+  text-align: center;
+  font-family:'Acme',sans-serif;
+  color:azure;
+  font-size: 10vh;
 }
 .gameBoard {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   border: 2px solid blue;
   align-items: center;
-  height: 70vh;
+  height: 50vh;
   width: 95vw;
 }
 .boardBlocks {
@@ -108,10 +115,58 @@
   height: 50%;
   width: 100%;
   border: 2px solid green;
-  
 }
 .start, .safe {
+  display:flex;
+  align-items: center;
+  justify-content: space-evenly;
   height: 50%;
   width: 95%;
   border: 2px solid yellow;
+}
+.start {
+  background-color: black;
+}
+.safe {
+  background-color: green;
+}
+.redPegs {
+  background-color: red;
+  height: 25%;
+  width: 25%;
+  border-radius: 50%;
+}
+.bluePegs {
+  background-color: blue;
+  height: 25%;
+  width: 25%;
+  border-radius: 50%;
+}
+.bottomPanel {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.announcements {
+  width: 30vw;
+  height: 10vh;
+  border: 2px solid white;
+}
+.gameBtns {
+  font-family: 'Acme', sans-serif;
+  font-size: 4vmin;
+  height: 10vh;
+  width: 10vw;
+  border: 1vmin solid rgba(18, 1, 129, 0.8);
+  border-radius: 10%;
+  color: azure;
+  background-image: radial-gradient(rgb(0, 0, 255), rgba(255, 0, 0, 0.843));
+}
+.gameBtns:hover {
+  background-image: radial-gradient(rgba(255, 0, 0, 0.843),rgb(0, 0, 255));
+  border: 1vh solid rgba(255, 0, 0, 0.6);
+  font-size: 5vmin;
 }
