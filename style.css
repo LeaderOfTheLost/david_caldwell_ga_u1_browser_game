@@ -144,14 +144,15 @@
 .safe {
   background-color: green;
 }
-.redPegs, .bluePegs{
+#redPeg, #bluePeg{
   background-color: red;
   height: 5vh;
   width: 5vh;
   border: 2px solid rgb(138, 138, 138);
   border-radius: 50%;
+  text-align: center;
 }
-.bluePegs {
+#bluePeg {
   background-color: blue;
 }
 .bottomPanel {

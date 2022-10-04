@@ -1,42 +1,51 @@
 // Global Variables
 let currentPlayer = 'red'
 let playing = false
-
+let diceRoll = Math.floor(Math.random() * 6 + 1)
 let diceBlock = document.querySelector('.dice')
 const blocks = document.querySelectorAll('.boardBlocks')
 const message = document.querySelector('.announcements')
 const playBtn = document.querySelector('#playBtn')
 const rollBtn = document.querySelector('#rollBtn')
-const bluePegs = document.querySelectorAll('.bluePegs')
-const redPegs = document.querySelectorAll('.redPegs')
-let blockSpace = blocks
+const bluePeg = document.querySelector('#bluePeg')
+const redPeg = document.querySelector('#redPeg')
 
 //game logic functions
-console.log(blockSpace)
 const startGame = () => {
-  message.textContent = `${currentPlayer.toUpperCase()}'s turn`
-  playing = true
-}
-startGame()
-
-const playGame = () => {
-  currentPlayer = 'red'
-  message.textContent = `${currentPlayer.toUpperCase()}'s turn`
-  diceBlock.textContent = '0'
+  message.textContent = `${currentPlayer.toUpperCase()}'s Rolls First`
+  diceBlock.textContent = null
   playing = true
 }
 const rollDice = () => {
-  let diceRoll = Math.floor(Math.random() * 6 + 1)
   diceBlock.textContent = diceRoll
 }
+console.log(diceRoll)
 
 // move pegs
-const playerMove = () => {
-  for (let i = 0; i < bluePegs.length; i++) {}
+// add dice roll to index of blocks
+// move peg to that position
+const playerMove = (diceRoll) => {
+  // let diceRoll = Math.floor(Math.random() * 6 + 1)
+  // diceBlock.textContent = diceRoll
+  // for (let i = 0; i < blocks.length; i++) {
+  // let move = diceRoll
+  console.log(diceRoll)
+  // }
+}
+const updateBlock = () => {}
+
+const switchPlayer = () => {
+  currentPlayer = currentPlayer == 'red' ? 'blue' : 'red'
+  message.textContent = `${currentPlayer.toUpperCase()}'s turn`
 }
 
-const winner = () => {}
+const checkWinner = () => {
+  let winner = false
+}
 
+startGame()
 //event listeners
-playBtn.addEventListener('click', playGame)
+playBtn.addEventListener('click', startGame)
 rollBtn.addEventListener('click', rollDice)
+bluePeg.addEventListener('click', playerMove)
+redPeg.addEventListener('click', playerMove)
