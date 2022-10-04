@@ -148,8 +148,8 @@
 }
 .redPegs, .bluePegs{
   background-color: red;
-  height: 25%;
-  width: 25%;
+  height: 5vh;
+  width: 5vh;
   border: 2px solid rgb(138, 138, 138);
   border-radius: 50%;
 }
@@ -165,12 +165,15 @@
   justify-content: space-evenly;
 }
 .announcements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30vw;
   height: 10vh;
   border: 2px solid white;
   font-family: 'Acme',sans-serif;
   color:azure;
-  font-size: 9vmin;
+  font-size: 5vmin;
   text-align: center;
   text-shadow: 3px 3px red;
 }
@@ -198,7 +201,13 @@ nav {
   background-color: rgb(166, 166, 166);
 }
 .dice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height:15vh;
   width: 15vh;
   border: 2px solid red;
+  font-size: 10vmin;
+  font-family: 'Acme', sans-serif;
+  color:azure;
 }
