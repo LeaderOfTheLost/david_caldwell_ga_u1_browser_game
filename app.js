@@ -22,43 +22,48 @@ const rollDice = () => {
 // move pegs
 // add dice roll to index of blocks
 // move peg to that position
-const redMove = () => {
+const playerMove = () => {
   let move = rollDice()
   diceBlock.textContent = move
-
-  for (let i = 0; i < blocks.length; i++) {
-    if (parseInt(blocks[i].getAttribute('blockIndex')) === move) {
-      blocks[move - 1].appendChild(redPeg)
-      let newPosition = parseInt(blocks[move].getAttribute('blockindex'))
-      console.log(newPosition)
+  let currentPosition = 0
+  if (currentPosition === 0) {
+    for (let i = 0; i < blocks.length; i++) {
+      if (parseInt(blocks[i].getAttribute('blockIndex')) === move) {
+        blocks[move - 1].appendChild(redPeg)
+        currentPosition = parseInt(redPeg.parentNode.getAttribute('blockIndex'))
+        console.log(currentPosition)
+      }
     }
   }
 }
-
-const blueMove = () => {
-  let move = rollDice()
-  diceBlock.textContent = move
-
-  for (let i = 0; i < blocks.length; i++) {
-    if (parseInt(blocks[i].getAttribute('blockindex')) === move) {
-      blocks[i - 1].appendChild(bluePeg)
-    }
-  }
-}
-const updateBlock = () => {}
+//   for (let i = 0; i < blocks.length; i++) {
+//     if (parseInt(blocks[i].getAttribute('blockIndex')) === move) {
+//       blocks[move - 1].appendChild(redPeg)
+//       currentPosition = parseInt(redPeg.parentNode.getAttribute('blockIndex'))
+//       console.log(currentPosition)
+//     }
+//   }
+// }
 
 const switchPlayer = () => {
-  currentPlayer = currentPlayer == 'red' ? 'blue' : 'red'
+  currentPlayer = currentPlayer === 'red' ? 'blue' : 'red'
   message.textContent = `${currentPlayer.toUpperCase()}'s turn`
 }
 
 const checkWinner = () => {
   let winner = false
+  if (document.querySelectorAll('.safe')[0].children === redPeg) {
+    winner = true
+    alert('Red Wins')
+  } else if (document.querySelectorAll('.safe')[1].children === bluePeg) {
+    winner = true
+    alert('Blue Wins')
+  }
 }
 
 startGame()
 //event listeners
 playBtn.addEventListener('click', startGame)
 rollBtn.addEventListener('click', rollDice)
-bluePeg.addEventListener('click', blueMove)
-redPeg.addEventListener('click', redMove)
+bluePeg.addEventListener('click', playerMove)
+redPeg.addEventListener('click', playerMove)
