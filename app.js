@@ -22,28 +22,20 @@ const rollDice = () => {
 // move pegs
 // add dice roll to index of blocks
 // move peg to that position
+let currentPosition = 0
 const playerMove = () => {
   let move = rollDice()
+
   diceBlock.textContent = move
-  let currentPosition = 0
-  if (currentPosition === 0) {
-    for (let i = 0; i < blocks.length; i++) {
-      if (parseInt(blocks[i].getAttribute('blockIndex')) === move) {
-        blocks[move - 1].appendChild(redPeg)
-        currentPosition = parseInt(redPeg.parentNode.getAttribute('blockIndex'))
-        console.log(currentPosition)
-      }
-    }
+  blocks[move + currentPosition - 1].appendChild(redPeg)
+  currentPosition += parseInt(redPeg.parentNode.getAttribute('blockIndex'))
+
+  console.log(currentPosition)
+  if (currentPosition > 15) {
+    document.querySelector('#redSafe').appendChild(redPeg)
   }
+  checkWinner()
 }
-//   for (let i = 0; i < blocks.length; i++) {
-//     if (parseInt(blocks[i].getAttribute('blockIndex')) === move) {
-//       blocks[move - 1].appendChild(redPeg)
-//       currentPosition = parseInt(redPeg.parentNode.getAttribute('blockIndex'))
-//       console.log(currentPosition)
-//     }
-//   }
-// }
 
 const switchPlayer = () => {
   currentPlayer = currentPlayer === 'red' ? 'blue' : 'red'
@@ -52,10 +44,10 @@ const switchPlayer = () => {
 
 const checkWinner = () => {
   let winner = false
-  if (document.querySelectorAll('.safe')[0].children === redPeg) {
+  if (document.querySelectorAll('.safe')[1].childNodes === redPeg) {
     winner = true
     alert('Red Wins')
-  } else if (document.querySelectorAll('.safe')[1].children === bluePeg) {
+  } else if (document.querySelectorAll('.safe')[0].children === bluePeg) {
     winner = true
     alert('Blue Wins')
   }

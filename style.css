@@ -135,7 +135,7 @@
   width: 95%;
   border: 2px solid blue;
 }
-#redStart, #blueSafe {
+#redStart, #redSafe {
   border: 2px solid red;
 } 
 .start {
