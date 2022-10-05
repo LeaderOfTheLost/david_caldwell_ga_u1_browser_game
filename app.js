@@ -1,7 +1,6 @@
 // Global Variables
 let currentPlayer = 'red'
 let playing = false
-let diceRoll = Math.floor(Math.random() * 6 + 1)
 let diceBlock = document.querySelector('.dice')
 const blocks = document.querySelectorAll('.boardBlocks')
 const message = document.querySelector('.announcements')
@@ -17,20 +16,16 @@ const startGame = () => {
   playing = true
 }
 const rollDice = () => {
+  let diceRoll = Math.floor(Math.random() * 6 + 1)
   diceBlock.textContent = diceRoll
 }
-console.log(diceRoll)
 
 // move pegs
 // add dice roll to index of blocks
 // move peg to that position
-const playerMove = (diceRoll) => {
-  // let diceRoll = Math.floor(Math.random() * 6 + 1)
-  // diceBlock.textContent = diceRoll
-  // for (let i = 0; i < blocks.length; i++) {
-  // let move = diceRoll
-  console.log(diceRoll)
-  // }
+const playerMove = () => {
+  let move = diceBlock.innerHTML
+  console.log(blocks)
 }
 const updateBlock = () => {}
 
