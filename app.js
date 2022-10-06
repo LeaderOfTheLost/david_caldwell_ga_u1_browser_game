@@ -2,9 +2,10 @@
 let currentPlayer = 'red'
 let playing = false
 let winner = false
+let message = document.querySelector('.announcements')
 let diceBlock = document.querySelector('.dice')
 const blocks = document.querySelectorAll('.boardBlocks')
-const message = document.querySelector('.announcements')
+
 const playBtn = document.querySelector('#playBtn')
 const rollBtn = document.querySelector('#rollBtn')
 const bluePeg = document.querySelector('#bluePeg')
@@ -13,7 +14,7 @@ const redPeg = document.querySelector('#redPeg')
 //game logic functions
 const startGame = () => {
   let currentPlayer = 'red'
-  message.textContent = `${currentPlayer.toUpperCase()}'s Rolls First`
+  message.textContent = `${currentPlayer.toUpperCase()}'s First`
   diceBlock.textContent = null
   playing = true
   document.querySelector('#redStart').appendChild(redPeg)
@@ -25,6 +26,7 @@ const rollDice = () => {
   let rollNum = Math.floor(Math.random() * 6 + 1)
   return rollNum
 }
+
 // move pegs
 // add dice roll to index of blocks
 // move peg to that position
@@ -40,8 +42,10 @@ const redMove = () => {
   } else {
     document.querySelector('#redSafe').appendChild(redPeg)
   }
+
   updateBlock()
   switchPlayer()
+  checkWinner()
 }
 let blueCurrentPosition = 0
 const blueMove = () => {
@@ -55,10 +59,11 @@ const blueMove = () => {
   } else {
     document.querySelector('#blueSafe').appendChild(bluePeg)
   }
-  checkWinner()
+
   updateBlock()
 
   switchPlayer()
+  checkWinner()
 }
 
 const switchPlayer = () => {
@@ -67,7 +72,6 @@ const switchPlayer = () => {
 }
 
 const updateBlock = () => {
-  console.log(redCurrentPosition)
   if (currentPlayer === 'red' && redCurrentPosition === blueCurrentPosition) {
     document.querySelector('#blueStart').appendChild(bluePeg)
     blueCurrentPosition = 0
@@ -80,12 +84,10 @@ const updateBlock = () => {
   }
 }
 const checkWinner = () => {
-  if (document.querySelector('#redSafe').children === redPeg) {
-    winner = true
-    alert('Red Wins')
-  } else if (document.querySelector('#blueSafe').children === bluePeg) {
-    winner = true
-    alert('Blue Wins')
+  if (document.querySelector('#blueSafe').hasChildNodes() === true) {
+    message.textContent = 'BLUE WINS!'
+  } else if (document.querySelector('#redSafe').hasChildNodes() === true) {
+    message.textContent = 'RED WINS!!'
   }
 }
 
