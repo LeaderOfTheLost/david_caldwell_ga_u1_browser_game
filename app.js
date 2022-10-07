@@ -1,11 +1,9 @@
 // Global Variables
 let currentPlayer = 'red'
 let playing = false
-let winner = false
 let message = document.querySelector('.announcements')
 let diceBlock = document.querySelector('.dice')
 const blocks = document.querySelectorAll('.boardBlocks')
-
 const playBtn = document.querySelector('#playBtn')
 const rollBtn = document.querySelector('#rollBtn')
 const bluePeg = document.querySelector('#bluePeg')
@@ -61,7 +59,6 @@ const blueMove = () => {
   }
 
   updateBlock()
-
   switchPlayer()
   checkWinner()
 }
