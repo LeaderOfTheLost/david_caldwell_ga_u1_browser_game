@@ -18,6 +18,8 @@ Links:
 
 ## Be first to move your dot to the other side of the board. While you are trying to move across the board you can send your opponents dot back to the start by landing on them and taking their place, putting them in Trouble.
 
+#### \*Game built with HTML, CSS, and Javascript. Uses npm and Node.
+
 ---
 
 ## How to get started
