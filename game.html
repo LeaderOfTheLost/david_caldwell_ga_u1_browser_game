@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
-  <script defer src="./app.js"></script>
+  <script defer src="./test.js"></script>
   <title>Double's Trouble</title>
 </head>
 <body id="gameBody">
@@ -16,7 +16,7 @@
     </nav>
   <h1 class="gameHead">Doubles Trouble</h1>
   <div class="gameBoard">
-    <section class="redSide">
+    <section class="startSide">
       <div class="start" id="redStart">
           <div id="redPeg"></div>
       </div>
@@ -42,7 +42,7 @@
       <div blockIndex="14" class="boardBlocks" id="b14"></div>
       <div blockIndex="15" class="boardBlocks" id="b15"></div>
     </section>
-    <section class="blueSide">
+    <section class="safeSide">
       <div class="safe" id="redSafe"></div>
       <div class="safe" id="blueSafe"></div>
     </section>
@@ -51,6 +51,7 @@
     <div class="announcements">Who's in Trouble?</div>
     <div class="dice"></div>
     <button class="gameBtns" id="rollBtn">Roll!!</button>
+    <button class="gameBtns" id="moveBtn">Move!!</button>
     <button class="gameBtns" id="playBtn">Play!!</button>
   </section>
   </section>
