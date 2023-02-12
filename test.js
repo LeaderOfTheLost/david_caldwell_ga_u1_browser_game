@@ -58,23 +58,25 @@ const rollDice = () => {
 const movePeg = () => {
   let move = roll
   if (currentPlayer === "red") {
-    if (redPos + move <= 15) {
+    if (redPos + move <= 16) {
       blocks[move + redPos - 1].appendChild(redPeg)
       redPos = parseInt(redPeg.parentNode.getAttribute("blockIndex")) + 1
     } else {
       document.querySelector("#redSafe").appendChild(redPeg)
+      playing = false
     }
   } else {
-    if (bluePos + move < 15) {
+    if (bluePos + move <= 16) {
       blocks[move + bluePos - 1].appendChild(bluePeg)
       bluePos = parseInt(bluePeg.parentNode.getAttribute("blockIndex")) + 1
     } else {
       document.querySelector("#blueSafe").appendChild(bluePeg)
+      playing = false
     }
   }
   updateBlock()
-  checkWinner()
   switchPlayer()
+  checkWinner()
 }
 
 // update block
@@ -90,10 +92,10 @@ const updateBlock = () => {
 
 // check for winner
 const checkWinner = () => {
-  if (redPeg.parentNode === redSafe) {
+  if (playing === false) {
     endGame()
-  } else if (bluePeg.parentNode === blueSafe) {
-    endGame()
+  } else {
+    checkPlayer()
   }
 }
 
@@ -105,8 +107,11 @@ const switchPlayer = () => {
 
 // end game
 const endGame = () => {
-  playing = false
-  announcements.innerHTML = `Game Over ${currentPlayer.toUpperCase()} Wins!`
+  if (currentPlayer === "red") {
+    announcements.textContent = `Blue Wins!`
+  } else {
+    announcements.textContent = `Red Wins!`
+  }
 }
 
 // event listeners
